@@ -1,0 +1,69 @@
+<nav>
+  <div class="container">
+    <div class="nav-content">
+      <div class="logoContainer">
+        <img src="./assets/images/linkedIn1.png" class="logo" />
+
+        <form class="search-form ">
+          <i class="fa fa-search form-control-feedback  " aria-hidden="true"></i>
+          <input class="form-control search " (keyup)="search($event)" type="search " placeholder="Search"
+            aria-label="Search" #searching />
+          <div class="search-div">
+            <!-- {{this.value}} -->
+            <div class="searchRes" *ngFor="let s of num" [routerLink]="['/profile',s.id]">
+              <img [src]="s.profileImg" />
+              <a>{{s.firstName}}</a>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="navlist">
+        <ul class="navbar navicons">
+          <li class="nav-item active">
+            <a [routerLink]="['/home',userid]"><i class="fas fa-home white  "></i>
+              <div class="icon-text icon">Home</div>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-users white ml-md-2"></i>
+              <div class="icon-text icon-network">MyNetwork</div>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-briefcase white"></i>
+              <div class="icon-text  icon ">Jobs</div>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="far fa-comment-alt white"></i>
+              <div class="icon-text icon-msg ">Messaging</div>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="far fa-bell white "></i>
+              <div class="icon-text icon-notification ">Notifications</div>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/profile',userid]"><i class="far fa-user-circle white"></i>
+              <div class="icon-text icon-notification ">Me</div>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-th"></i>
+              <div class="icon-text icon-notification ">Work</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>
+                <div class="premium">Try premium free for one month</div>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,134 @@
+<div class="profile-container container">
+  <div class="row">
+    <div class="col-9">
+      <img [src]="user.coverImg" alt="Responsive image" width="791.984px" />
+    </div>
+  </div>
+  <img [src]="user.profileImg" alt="profile pic" class="rounded-circle pic" />
+  <div class="row">
+    <div class="col-9">
+      <div class="profile-block" width="791.984px">
+        <div class="add-section">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle button" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Add Profile Section
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Intro</a>
+              <a class="dropdown-item" href="#">About</a>
+              <a class="dropdown-item" href="#">Featured</a>
+              <a class="dropdown-item" href="#">background</a>
+              <a class="dropdown-item" href="#">Skills</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-dark">
+            More...
+          </button>
+          <div class="edit">
+            <i data-toggle="modal" data-target="#profileModal" data-whatever="@getbootstrap"
+              class="fas fa-pencil-alt pen" (click)="openEditModal()"></i>
+          </div>
+        </div>
+        <div class="personal-txt">
+          <div class="text">
+            <h4 class="font-weight-normal">{{ user.firstName +" "+ user.lastName}}</h4>
+            <h5 class="font-weight-light">{{ user.jobTitle }}</h5>
+            <h5 class="font-weight-light" style="display: inline;">
+              {{ user.address }}
+            </h5>
+            <h6 class="font-weight-normal" style="display: inline; color: rgb(19, 148, 247);">
+              {{ user.connectionIds.length }}+ connections .Contact info
+            </h6>
+          </div>
+          <div>
+            <img src="assets/images/ITIlogo.png" class="logo" />
+            <a href="#" class="text-right text-wrap exp"><span>{{ user.jobAndEducation }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div [ngClass]="{'modal-opened' : editClick}" *ngIf="editClick">
+  <div class="modal-backdrop styling" [ngClass]="{'modal-opened' : editClick}">
+
+  </div>
+  <!-- profile modal -->
+  <div class="modal fade bd-example-modal show" id="profileModal" tabindex="-1" role="dialog"
+    aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Intro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openEditModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editProfileForm" (ngSubmit)="edit()">
+            <div class="form-group">
+              <div class="positing cover-pen shadow">
+                <i class="fas fa-pencil-alt pen"> </i>
+              </div>
+              <img [src]="user.coverImg" class="coverImg" alt="cover img">
+              <div>
+                <img [src]="user.profileImg" class=" img-thumbnail rounded-circle profileImg " alt="img">
+              </div>
+              <div class="positing profile-pen shadow">
+                <i class="fas fa-pencil-alt pen"> </i>
+              </div>
+            </div>
+            <div class="form-row container">
+              <div class="form-group col-md-6">
+                <label for="inputFName">First Name</label>
+                <input required type="text" class="form-control" id="inputEmail4" formControlName="firstName" />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLName">Last Name</label>
+                <input required type="text" class="form-control" id="inputPassword4" value={{user.lastName}}
+                  formControlName="lastName" />
+              </div>
+            </div>
+            <div class="form-group container">
+              <label for="inputAddress">Headline</label>
+              <input type="text" class="form-control" id="inputHeadline" value={{user.jobTitle}}
+                formControlName="jobTitle" />
+            </div>
+            <br />
+            <h6 class="font-weight-normal container" style="display: inline; color: rgb(19, 148, 247);">
+              <i class="fa fa-plus"> </i>
+              Add current position
+            </h6>
+            <br />
+            <br />
+            <div class="form-group container">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" />
+                <label class="form-check-label" for="gridCheck">
+                  Show my education in my intro
+                </label>
+              </div>
+            </div>
+            <div class="form-group container">
+              <label for="inputAddress2">Education</label>
+              <input type="text" class="form-control" id="inputEducation" value={{user.jobAndEducation}}
+                formControlName="jobAndEducation" />
+            </div>
+            <div class="form-row container">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Country/Region</label>
+                <input type="text" class="form-control" id="inputCity" value={{user.address}}
+                  formControlName="address" />
+              </div>
+            </div>
+            <div class="modal-footer container">
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

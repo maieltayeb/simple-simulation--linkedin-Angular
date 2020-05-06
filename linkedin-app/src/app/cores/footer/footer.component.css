@@ -1,0 +1,117 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #f5f5f5;
+}
+
+.profile-card {
+  position: relative;
+}
+
+.card-profile-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: -14% auto 0 auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+}
+
+.card-display {
+  display: inline-block;
+}
+
+.card-align {
+  text-align: right !important;
+}
+
+.font {
+  font-size: 12px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.card-color {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.card-color-black {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.decoration:hover {
+  text-decoration: underline;
+  text-decoration-color: #0073b1;
+}
+
+.card-decoration:hover {
+  color: #006097;
+}
+
+.card-hover-background:hover {
+  width: 100%;
+  background-color: #f3f6f8;
+}
+
+.card-text-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.right-card-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.hr-width {
+  width: 19.5rem;
+}
+
+.about-color {
+  color: #878585;
+}
+
+.about-hover:hover {
+  color: #3f95c3;
+}
+
+.about-img {
+  height: 17px;
+  width: 60px;
+}
+
+.about-text {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* #about-icon {
+    width: 13px;
+    height: 13px;
+    content: url("images/icons8-expand-arrow-13.png");
+    background-image: url('images/icons8-expand-arrow-13.png');
+  } */
+
+/* .about-icon:hover {
+    src: url('images/icons8-expand-arrow-13-hover.png');
+    content: url("images/icons8-expand-arrow-13-hover.png");
+  } */
+
+/* a:hover {
+    text-decoration: underline;
+  } */

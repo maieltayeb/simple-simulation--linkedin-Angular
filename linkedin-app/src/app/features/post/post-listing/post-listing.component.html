@@ -1,0 +1,174 @@
+<!-- post and comment -->
+
+<!-- <div class="post-container">
+  <div class="start-post">
+    <div class="write-post">
+      <a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+          width="24" height="24" focusable="false">
+          <path
+            d="M17 13.75l2-2V20a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1h8.25l-2 2H5v12h12v-5.25zm5-8a1 1 0 01-.29.74L13.15 15 7 17l2-6.15 8.55-8.55a1 1 0 011.41 0L21.71 5a1 1 0 01.29.71zm-4.07 1.83l-1.5-1.5-6.06 6.06 1.5 1.5zm1.84-1.84l-1.5-1.5-1.18 1.17 1.5 1.5z">
+          </path>
+        </svg>
+      </a>
+      <a><span>Start a post</span></a>
+    </div>
+    <div class="post-media">
+      <div class="camera">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+            width="24" height="24" focusable="false">
+            <path
+              d="M21 6h-3l-1.5-3h-9L6 6H3a1 1 0 00-1 1v12a1 1 0 001 1h18a1 1 0 001-1V7a1 1 0 00-1-1zM7.36 8l1.5-3h6.28l1.5 3H20v2h-3.42a5 5 0 00-9.16 0H4V8h3.36zm7.76 4A3.13 3.13 0 1112 8.88 3.13 3.13 0 0115.13 12zM4 18v-7h3.1a5 5 0 109.8 0H20v7H4z">
+            </path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="vedio">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+            width="24" height="24" focusable="false">
+            <path
+              d="M21 5.92a1 1 0 00-.57.18L17 8.5V7a1 1 0 00-1-1H3a1 1 0 00-1 1v10a1 1 0 001 1h13a1 1 0 001-1v-1.5l3.43 2.4a1 1 0 00.57.18 1 1 0 001-1V6.92a1 1 0 00-1-1zM15 16H4V8h11v8zm2-5.21l3-2.1v6.62l-3-2.1v-2.42z">
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div class="file">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+            width="24" height="24" focusable="false">
+            <path
+              d="M14.13 2H5a1 1 0 00-1 1v18a1 1 0 001 1h14a1 1 0 001-1V7.88zM18 20H6V4h7v5h5v11zM8 12h8v1H8v-1zm0 3h6v1H8v-1z">
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="write-article">
+    <a href="#">Write an article</a><span> on linked in</span>
+  </div>
+</div> -->
+<div class="allPost">
+  <div class="post">
+    <div class="upper-part-post">
+      <div>
+        <a href="#"><img [src]="postUser.profileImg" class="img-post" /></a>
+      </div>
+
+      <div class="user-info">
+        <div>
+          <span class="user-name">{{
+            postUser.firstName + " " + postUser.lastName
+          }}</span>
+        </div>
+        <div>
+          <span class="user-job">{{ postUser.jobTitle }}</span>
+        </div>
+        <div>
+          <span class="date">{{ myDate | date: "shortTime" }}.</span>
+          <span class="edit">Edit.</span>
+          <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16"
+              fill="currentColor" width="16" height="16" focusable="false">
+              <path
+                d="M8 1a7 7 0 107 7 7 7 0 00-7-7zm0 1.84a5.16 5.16 
+                            0 011 .1v1.65l-1.71 1.7-.29.3v1L4.09 4.67A5.13 5.13 0 018 
+                            2.84zm1 10.22v-1.68l-.55-.28L7 10.38V9h3.09l.71.72L9.32 13zM2.84
+                             8a5.1 5.1 0 01.67-2.49L6 8v2.38a1 1 0 00.55.89L8 12v1.16A5.17 5.17 0 012.84 8zm7.85 4.39L11.78 10a.75.75 0 00-.15-.84l-.84-.84a1 1 0 00-.7-.32H8V7l1.71-1.71a1 1 0 00.29-.7V3.24a5.14 5.14 0 01.69 9.15z">
+              </path>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="drop-down-info">
+        <i class="fas fa-ellipsis-h"></i>
+        <div class="menu-items">
+          <div class="data">
+            <li>
+              <a href="#"><i class="far fa-bookmark"> </i>Save</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-paper-plane"> </i>send in a private message</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-copy"></i>Copy Link to post</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-eye-slash"></i>Hide this post</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-flag"></i>Report this post</a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-trade-federation"></i>Improve my feed</a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="medium-part-post">
+      <span>
+        {{ post.postText }}
+      </span>
+
+      <div class="reactions-icon">
+        <a><img src="images/like.PNG" /></a>
+        <a><img src="images/Celebrate.PNG" /></a>
+        <a><img src="images/heart.PNG" /></a>
+        <a><img src="images/insightful.PNG" /></a>
+        <a><img src="images/face.PNG" /></a>
+      </div>
+    </div>
+
+    <div class="lower-part-post">
+      <div class="like">
+        <svg (click)="newLike()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+          fill="currentColor" width="24" height="24" focusable="false">
+          <path
+            d="M17.51 11l-2.15-3a14.81 14.81 0 01-2.25-5.29L12.74 1H10.5A2.5 2.5 0 008 3.5v.58a9 9 0 00.32 2.39L9 9H4.66A2.61 2.61 0 002 11.4a2.48 2.48 0 00.39 1.43 2.48 2.48 0 00.69 3.39 2.46 2.46 0 001.45 2.92 2.47 2.47 0 000 .36A2.5 2.5 0 007 22h4.52a8 8 0 001.94-.24l3-.76H21V11h-3.49zM19 19h-2.12l-3.41.82A6 6 0 0112 20H7a.9.9 0 01-.9-.89v-.14l.15-1-1-.4a.9.9 0 01-.55-.83.93.93 0 010-.22l.3-.95-.73-.57a.9.9 0 01-.39-.74.88.88 0 01.12-.44l.46-.72-.46-.72a.88.88 0 01-.14-.51 1 1 0 011-.87h6.64l-1.3-4.7a9 9 0 01-.33-2.37v-.55a.5.5 0 01.5-.5h.95a17.82 17.82 0 002.52 6.22L16.6 13H19v6z">
+          </path>
+        </svg>
+        <span>{{ post.like }}</span>
+      </div>
+
+      <div class="comment">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+          width="24" height="24" focusable="false">
+          <path
+            d="M18 10H6V9h12v1zm4-5v17l-5-4H3a1 1 0 01-1-1V5a1 1 0 011-1h18a1 1 0 011 1zm-2 1H4v10h13.7l2.3 1.84V6zm-4 6H8v1h8v-1z">
+          </path>
+        </svg>
+        <span (click)="addComment()">Comment</span>
+      </div>
+
+      <div class="share">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+          width="24" height="24" focusable="false">
+          <path
+            d="M24 12a1.18 1.18 0 00-.36-.84L14 2v6h-3A10 10 0 001 18v4h1.87A6.11 6.11 0 019 16h5v6l9.63-9.14A1.18 1.18 0 0024 12zm-8 5.54V14H9a8.15 8.15 0 00-6 2.84A8 8 0 0111 10h5V6.48L21.81 12z">
+          </path>
+        </svg>
+        <span>Share</span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="addCommentClicked" class="comment-div">
+    <div>
+      <!-- <img class="comment-img" [src]="user.profileImg" /> -->
+      <input placeholder="Add a comment..." class="form-control rounded-pill" type="text" #newComment
+        (keydown)="addNewComment($event, newComment)" />
+    </div>
+    <div *ngFor="let comments of x; let i = index" class="border border-light rounded-lg">
+      <div>
+        <img class="comment-img" [src]="commentedUsers[i].profileImg" />
+        <span>{{commentedUsers[i].firstName+" "+commentedUsers[i].lastName}}</span>
+      </div>
+      <div>
+        {{ comments.commentContent }}
+      </div>
+    </div>
+  </div>
+</div>

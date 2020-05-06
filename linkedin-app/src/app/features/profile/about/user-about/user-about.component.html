@@ -1,0 +1,69 @@
+<div class="about-container shadow-sm p-3 mb-5 bg-white rounded">
+  <div class="row">
+    <div class="col-9"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="block-header">
+        <div class="about-header-h2">
+          <h4>About</h4>
+        </div>
+        <div class="space"></div>
+        <div class="about-header-icon">
+          <div class="about-edit">
+            <a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+              <i class="fas fa-pencil-alt pen" (click)="openEditModal()"> </i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-body-container">
+        <div class="about-text">
+          <span class=" about-text-span font-weight-normal" #SpanAboutContent>
+            {{ user.about }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+<!--Modal *ngIf="isShow"-->
+<div [ngClass]="{'modal-opened' : isEditOpen}" *ngIf="isEditOpen">
+  <div class="modal-backdrop styling" [ngClass]="{'modal-opened' : isEditOpen}">
+  </div>
+  <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="display: block;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit About</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openEditModal()"
+            #closebutton>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Summary</label>
+              <!-- <textarea class="form-control" id="message-text" [(ngModel)]="about"></textarea> -->
+              <textarea class="form-control" id="message-text" #textAreaAbout>{{user.about}}</textarea>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="closeModal" (click)="onSubmitAbout(textAreaAbout)" class="btn btn-primary"
+            form="formAbout">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal-->
+  </div>
+</div>
