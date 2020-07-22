@@ -1,2 +1,2 @@
 # simple-simulation--linkedin-Angular
-simple simulation -linked in -website-Angular
+simple simulation for Linkedin website useing Framework Angular7
